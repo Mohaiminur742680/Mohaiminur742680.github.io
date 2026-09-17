@@ -44,7 +44,7 @@
 
         <div class="hero-image">
 
-            <img src="images/hero.jpg" alt="Professional Service">
+            <img id="slider-image" src="images/otd1%20(1).jpg" alt="Professional Service">
 
         </div>
 
@@ -233,3 +233,65 @@
 </footer>
 
 </html>
+<script>
+
+const images = [
+    "images/otd1%20(1).jpg",
+    "images/otd1%20(2).jpg",
+    "images/otd1%20(3).jpg",
+    "images/otd1%20(4).jpg",
+    "images/otd1%20(5).jpg",
+    "images/otd1%20(6).jpg",
+    "images/otd1%20(7).jpg",
+    "images/otd1%20(8).jpg",
+    "images/otd1%20(9).jpg",
+    "images/otd1%20(10).jpg",
+    "images/otd1%20(11).jpg",
+    "images/otd1%20(12).jpg",
+    "images/otd1%20(13).jpg",
+    "images/otd1%20(14).jpg",
+    "images/otd1%20(15).jpg",
+    "images/otd1%20(16).jpg",
+    "images/otd1%20(17).jpg",
+    "images/otd1%20(18).jpg",
+    "images/otd1%20(19).jpg",
+    "images/otd1%20(20).jpg",
+    "images/otd1%20(21).jpg",
+    "images/otd1%20(22).jpg",
+    "images/otd1%20(23).jpg"
+];
+
+let currentImage = 0;
+
+setInterval(function() {
+
+    currentImage++;
+
+    if (currentImage >= images.length) {
+        currentImage = 0;
+    }
+
+    const sliderImage = document.getElementById("slider-image");
+
+const animations = [
+    "fadeIn",
+    "slideIn",
+    "zoomIn"
+];
+
+const randomAnimation =
+    animations[Math.floor(Math.random() * animations.length)];
+
+sliderImage.classList.remove("slider-animation");
+
+void sliderImage.offsetWidth;
+
+sliderImage.src = images[currentImage];
+
+sliderImage.classList.add("slider-animation");
+
+sliderImage.style.animationName = randomAnimation;
+
+}, 3000);
+
+</script>
